@@ -57,5 +57,8 @@
     <string name="retrieve_location">Retrieve Location</string>
     <string name="enter_location">Enter Location</string>
     <string name="add_new_stack">Add New Stack</string>
+    <string name="title_activity_exchange">ExchangeActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

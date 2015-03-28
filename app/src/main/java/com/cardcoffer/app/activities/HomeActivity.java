@@ -60,7 +60,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                launchStacksActivity();
+                launchExchangeActivity();
             }
         });
 
@@ -90,6 +90,13 @@ public class HomeActivity extends Activity {
             launchLoginActivity();
 
         }
+
+    }
+
+    private void launchExchangeActivity() {
+
+        Intent intent  = new Intent(this, ExchangeActivity.class);
+        startActivity(intent);
 
     }
 
