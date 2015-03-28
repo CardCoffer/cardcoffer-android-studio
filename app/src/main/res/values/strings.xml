@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Card Coffer</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="main_activity_menu_item_about_title">About</string>
+    <string name="main_activity_menu_item_settings_title">Settings</string>
+    <string name="login_label_username">Username:</string>
+    <string name="login_label_password">Password:</string>
+    <string name="login_button_sign_in">Sign In</string>
+    <string name="login_text_newToAffairBox">New To AffairBox?</string>
+    <string name="login_text_singup"> Sign Up.</string>
+    <string name="logout_text">Logout</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="button_save">Save</string>
+    <string name="button_back">Back</string>
+    <string name="action_add_event">Add Event</string>
+    <string name="new_event_hint_event_name">Event\'s Name</string>
+    <string name="new_event_hint_event_venue">Event\'s Venue</string>
+    <string name="new_event_hint_event_info">Event\'s Info</string>
+    <string name="new_event_button_add">Add &amp; Start Exchanging</string>
+    <string name="activity_exchange_let_nfc_magic">Put both phones back to back, or put the back of your phone on the NFC card.</string>
+    <string name="activity_exchange_tap_to_folan">Then, Tap to send your card, Or tap on the other phone\'s screen to receive their card.</string>
+    <string name="action_instant_exchange">Instant Exchange</string>
+    <string name="home_activity_edit">Edit</string>
+    <string name="your_first_name">Your First Name</string>
+    <string name="your_last_name">Your Last Name</string>
+    <string name="your_title">Your Job Title</string>
+    <string name="your_employer_company_etc">Your Employer, Company, etc</string>
+    <string name="save">Save</string>
+    <string name="your_country">Your Country</string>
+    <string name="your_city">Your City</string>
+    <string name="your_cell_number">Your Cell Number</string>
+    <string name="your_email">Your Business Email</string>
+    <string name="fetching_data_from_server_please_be_patient_">Fetching Data From Server! Please Be Patient...</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="completelogo">CompleteLogo</string>
+    <string name="sign_up_for_cardcoffer">"Sign Up for CardCoffer "</string>
+    <string name="need_help">"Need Help? "</string>
+    <string name="logout">Logout</string>
+    <string name="edit_card">Edit Card</string>
+    <string name="user_photo">User Photo</string>
+    <string name="drawer_open">Menu</string>
+    <string name="drawer_close">CardCoffer</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="company">Company</string>
+    <string name="country">Country</string>
+    <string name="search">Search</string>
+    <string name="card_logo">card logo</string>
+    <string name="check_in_button">check in button</string>
+    <string name="show_cards">show cards</string>
+    <string name="exchange">exchange</string>
+    <string name="retrieve_location">Retrieve Location</string>
+    <string name="enter_location">Enter Location</string>
+    <string name="add_new_stack">Add New Stack</string>
+
+</resources>
