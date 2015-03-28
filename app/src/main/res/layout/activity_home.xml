@@ -45,6 +45,8 @@
             droidicon:db_bg_color="@color/spotify"
             droidicon:db_icon_color="@color/white"
             droidicon:db_icon="gmd-my-location"
+            droidicon:db_size="60dp"
+            android:layout_margin="5dp"
             />
 
 
@@ -63,10 +65,16 @@
             android:id="@+id/btnHome_exchange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             droidicon:db_bg_color="@color/pinterest"
             droidicon:db_icon_color="@color/white"
             droidicon:db_icon="gmd-swap-vert"
+            droidicon:db_size="60dp"
             />
+
+
+
+
 
 
     </LinearLayout>

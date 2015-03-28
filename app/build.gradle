@@ -28,7 +28,7 @@ dependencies {
 }
 
 dependencies {
-    compile 'com.github.theDazzler:droidicon:0.1.3@aar'
+    compile 'com.github.theDazzler:droidicon:0.1.7@aar'
 }
 
 repositories {
