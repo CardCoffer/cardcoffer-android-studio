@@ -18,6 +18,12 @@ import com.cardcoffer.app.R.layout;
 import com.cardcoffer.app.R.menu;
 import com.cardcoffer.app.customviews.ItemCardThumbnail;
 import com.parse.ParseUser;
+import com.thedazzler.droidicon.IconicFontDrawable;
+import com.thedazzler.droidicon.badges.DroidiconBadge;
+import com.thedazzler.droidicon.util.TypefaceManager;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 
@@ -27,7 +33,8 @@ import com.parse.ParseUser;
 public class HomeActivity extends Activity {
 
 	LinearLayout llCardContainer;
-	ImageButton btnCardCoffer, btnCheckIn, btnExchange;
+	ImageButton btnCardCoffer;
+    DroidiconBadge btnExchange, btnCheckIn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +43,24 @@ public class HomeActivity extends Activity {
 
 		llCardContainer = (LinearLayout) findViewById(R.id.home_llCardContainer);
 
+
+        initCustomIcons();
+
 		btnCardCoffer = (ImageButton) findViewById(R.id.btnHome_cardCoffer);
-		btnCheckIn = (ImageButton) findViewById(R.id.btnHome_checkIn);
-		btnExchange = (ImageButton) findViewById(R.id.btnHome_exchange);
+		btnCheckIn = (DroidiconBadge) findViewById(R.id.btnHome_checkIn);
+
+
+		//btnExchange = (ImageButton) findViewById(R.id.btnHome_exchange);
+        btnExchange = (DroidiconBadge) findViewById(id.btnHome_exchange);
+
+        btnExchange.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                launchStacksActivity();
+            }
+        });
+
 		
 		btnCheckIn.setOnClickListener(new OnClickListener() {
 			
@@ -68,7 +90,11 @@ public class HomeActivity extends Activity {
 
 	}
 
-	protected void launchStacksActivity() {
+    private void initCustomIcons() {
+
+    }
+
+    protected void launchStacksActivity() {
 		Intent intent = new Intent(this, StacksActivity.class);
 		startActivity(intent);
 	}

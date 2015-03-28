@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:droidicon="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_mainLL"
     android:layout_width="fill_parent"
@@ -36,13 +37,17 @@
         android:gravity="center"
         android:orientation="horizontal" >
 
-        <ImageButton
+
+        <com.thedazzler.droidicon.badges.DroidiconBadge
             android:id="@+id/btnHome_checkIn"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="?android:selectableItemBackground"
-            android:contentDescription="@string/check_in_button"
-            android:src="@drawable/ic_action_place" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            droidicon:db_bg_color="@color/spotify"
+            droidicon:db_icon_color="@color/white"
+            droidicon:db_icon="gmd-my-location"
+            />
+
+
 
         <ImageButton
             android:id="@+id/btnHome_cardCoffer"
@@ -53,14 +58,17 @@
             android:scaleType="fitCenter"
             android:src="@drawable/stackofcards" />
 
-        <ImageButton
+
+        <com.thedazzler.droidicon.badges.DroidiconBadge
             android:id="@+id/btnHome_exchange"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="?android:selectableItemBackground"
-            android:contentDescription="@string/exchange"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_action_upload" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            droidicon:db_bg_color="@color/pinterest"
+            droidicon:db_icon_color="@color/white"
+            droidicon:db_icon="gmd-swap-vert"
+            />
+
+
     </LinearLayout>
 
 </LinearLayout>
