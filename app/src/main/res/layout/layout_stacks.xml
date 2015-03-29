@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:animateLayoutChanges="true"
-    android:background="@android:color/background_light"
+    android:background="@color/sidebar_gray"
     android:orientation="vertical"
     android:scrollbarAlwaysDrawVerticalTrack="true" >
 
@@ -23,7 +23,16 @@
             android:id="@+id/stacks_llStackContainer"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:gravity="center">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="STACKS"
+               android:textStyle="bold"
+               android:textSize="60sp"
+               android:gravity="center"
+               android:textColor="@color/mild_gray"/>
         </LinearLayout>
     </ScrollView>
 
