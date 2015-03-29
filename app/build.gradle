@@ -29,6 +29,7 @@ dependencies {
 
 dependencies {
     compile 'com.github.theDazzler:droidicon:0.1.7@aar'
+    compile 'me.dm7.barcodescanner:zbar:1.6.3'
 }
 
 repositories {

@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -97,8 +98,15 @@
 
                 <data android:mimeType="application/vnd.com.cardcoffer" />
             </intent-filter>
-
             >
+        </activity>
+        <activity
+            android:name=".activities.ScannerActivity"
+            android:label="@string/title_activity_scanner"
+            android:parentActivityName=".activities.ExchangeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cardcoffer.app.activities.ExchangeActivity" />
         </activity>
     </application>
 

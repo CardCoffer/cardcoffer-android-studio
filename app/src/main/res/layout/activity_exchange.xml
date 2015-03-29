@@ -15,6 +15,7 @@
 
 
 
+        <!-- Sending Layout -->
 
         <LinearLayout
             android:id="@+id/exchange_llSending"
@@ -141,20 +142,25 @@
                 android:text="TAP TO SEND"
                 android:textColor="@color/mild_gray"
                 android:gravity="center"/>
-            <ImageView
+
+            <TextView
+                android:id="@+id/tvExchange_openQRScanner"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:contentDescription="qr-code placement"
-                android:src="@drawable/cardcoffercom"
-                android:layout_margin="8dp"/>
+                android:layout_margin="8dp"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:textColor="@color/viewfinder_border"
+                android:text="TAP HERE TO SCAN QR-CODE"/>
+
 
             <TextView
                 android:id="@+id/tvExchange_chooseMethodReceive"
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="italic"
-                android:text="Choose Transfer Method:"
+                android:text="Or Choose Other Transfer Methods:"
                 android:textColor="@color/mild_gray"
                 android:gravity="center"/>
 

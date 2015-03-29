@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnClickListener;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -16,7 +17,7 @@ public class ExchangeActivity extends Activity {
 
 
     ViewFlipper viewFlipper;
-    TextView sendBig,sendTap,receiveBig,receiveTap;
+    TextView sendBig,sendTap,receiveBig,receiveTap, openScanner;
     DroidiconBadge btnNFCSend, btnNFCReceive;
 
     @Override
@@ -32,10 +33,11 @@ public class ExchangeActivity extends Activity {
 
         receiveBig = (TextView) findViewById(R.id.tvExchange_receiving);
         receiveTap = (TextView) findViewById(R.id.tvExchange_tapToSend);
+        openScanner = (TextView) findViewById(R.id.tvExchange_openQRScanner);
 
         btnNFCSend = (DroidiconBadge) findViewById(R.id.btnExchange_nfc_send);
 
-        btnNFCSend.setOnClickListener(new View.OnClickListener() {
+        btnNFCSend.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchNFCActivity("send");
@@ -44,14 +46,14 @@ public class ExchangeActivity extends Activity {
 
         btnNFCReceive = (DroidiconBadge) findViewById(R.id.btnExchange_nfc_receive);
 
-        btnNFCReceive.setOnClickListener(new View.OnClickListener() {
+        btnNFCReceive.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchNFCActivity("receive");
             }
         });
 
-        sendBig.setOnClickListener(new View.OnClickListener() {
+        sendBig.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -60,7 +62,7 @@ public class ExchangeActivity extends Activity {
             }
         });
 
-        sendTap.setOnClickListener(new View.OnClickListener() {
+        sendTap.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -68,7 +70,7 @@ public class ExchangeActivity extends Activity {
 
             }
         });
-        receiveBig.setOnClickListener(new View.OnClickListener() {
+        receiveBig.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -76,7 +78,7 @@ public class ExchangeActivity extends Activity {
 
             }
         });
-        receiveTap.setOnClickListener(new View.OnClickListener() {
+        receiveTap.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -85,6 +87,21 @@ public class ExchangeActivity extends Activity {
             }
         });
 
+        openScanner.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                launchScannerActivity();
+
+            }
+        });
+
+    }
+
+    private void launchScannerActivity() {
+
+        Intent intent = new Intent(this, ScannerActivity.class);
+        startActivity(intent);
     }
 
     private void launchNFCActivity(String mode) {
