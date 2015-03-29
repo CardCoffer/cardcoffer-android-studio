@@ -100,6 +100,7 @@ public class HomeActivity extends Activity {
             launchLoginActivity();
 
         }
+        else {
 
 //        boolean found = false;
 //
@@ -116,38 +117,38 @@ public class HomeActivity extends Activity {
 //            llCardContainer.addView(new ThumbnailButton(this));
 //        }
 //
-        btnAddCard = new ThumbnailButton(this);
-        llCardContainer.addView(btnAddCard);
+            btnAddCard = new ThumbnailButton(this);
+            llCardContainer.addView(btnAddCard);
 
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
-        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername() );
-        query.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> userDataList, ParseException e) {
-                if (e == null) {
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
+            query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+            query.findInBackground(new FindCallback<ParseObject>() {
+                public void done(List<ParseObject> userDataList, ParseException e) {
+                    if (e == null) {
 
-                    if(userDataList != null){
-                        ParseObject userData = userDataList.get(0);
+                        if (userDataList != null) {
+                            ParseObject userData = userDataList.get(0);
 //                        Toast.makeText(getApplicationContext(), userData.toString(), Toast.LENGTH_SHORT).show();
 
-                        JSONArray arrayOfOwnCards = userData.getJSONArray("myOwnCards");
+                            JSONArray arrayOfOwnCards = userData.getJSONArray("myOwnCards");
 
-                        try {
-                            layCards(arrayOfOwnCards);
-                        } catch (JSONException e1) {
-                            e1.printStackTrace();
-                        }
+                            try {
+                                layCards(arrayOfOwnCards);
+                            } catch (JSONException e1) {
+                                e1.printStackTrace();
+                            }
 
 //                        Toast.makeText(getApplicationContext(), myArray.toString(), Toast.LENGTH_SHORT).show();
+                        }
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Error Retrieving Data From Server", Toast.LENGTH_SHORT).show();
                     }
-
-                } else {
-                    Toast.makeText(getApplicationContext(),"Error Retrieving Data From Server", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
+            });
 
-
+        }
 
 
     }
@@ -163,6 +164,18 @@ public class HomeActivity extends Activity {
     protected void onResume() {
         super.onResume();
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (ParseUser.getCurrentUser() == null) {
+
+            startActivity(new Intent(this, LoginActivity.class));
+            // XXX seems legit! :D
+            finish();
+
+        }
     }
 
     private void layCards(JSONArray arrayOfOwnCards) throws JSONException {
@@ -277,7 +290,24 @@ public class HomeActivity extends Activity {
 
             return true;
         }
+
+        if (id == R.id.action_logout) {
+
+            logout();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void logout() {
+
+        ParseUser.logOut();
+
+        if (ParseUser.getCurrentUser() == null) {
+            Toast.makeText(getApplicationContext(), "Logout Successfully Completed!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
     }
 
 }
