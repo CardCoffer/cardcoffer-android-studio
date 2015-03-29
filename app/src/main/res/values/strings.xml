@@ -58,7 +58,10 @@
     <string name="enter_location">Enter Location</string>
     <string name="add_new_stack">Add New Stack</string>
     <string name="title_activity_exchange">ExchangeActivity</string>
-
+    <string name="nfc_receive_mode_phones">Put Both Phones Back to Back.</string>
+    <string name="nfc_receive_mode_phones_then">Then, ask the sender to tap on their phone screen.</string>
+    <string name="nfc_receive_mode_card">To scan a NFC card, place the back of your phone on it.</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_nfc">NFCActivity</string>
 
 </resources>

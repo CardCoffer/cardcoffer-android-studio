@@ -1,85 +1,194 @@
-
-<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" xmlns:droidicon="http://schemas.android.com/apk/res-auto" android:id="@+id/exchange_viewFlipper" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:droidicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_scrollView"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sidebar_gray">
+    android:layout_weight="1"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    tools:ignore="Suspicious0dp" >
+
+    <ViewFlipper android:id="@+id/exchange_viewFlipper" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sidebar_gray">
 
 
-    <LinearLayout
-        android:id="@+id/exchange_llSending"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/tvExchange_sending"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="SENDING"
-            android:textColor="@color/mild_gray"
-            android:gravity="center"/>
-
-        <TextView
-            android:id="@+id/tvExchange_tapToReceive"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="TAP TO RECEIVE"
-            android:textColor="@color/mild_gray"
-            android:gravity="center"/>
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:contentDescription="qr-code placement"
-            android:src="@drawable/cardcoffercom"
-            android:layout_margin="8dp"/>
 
 
         <LinearLayout
-            android:layout_margin="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:orientation="horizontal">
-            <com.thedazzler.droidicon.badges.DroidiconBadge
-                android:id="@+id/btnExchange_bluetooth_send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                droidicon:db_icon_color="@color/mild_gray"
-                droidicon:db_icon="gmd-bluetooth"
-                droidicon:db_size="80dp"
-                />
-            <com.thedazzler.droidicon.badges.DroidiconBadge
-                android:id="@+id/btnExchange_nfc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                droidicon:db_icon_color="@color/mild_gray"
-                droidicon:db_icon="gmd-nfc"
-                droidicon:db_size="80dp"
-                />
+            android:id="@+id/exchange_llSending"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
 
-            <com.thedazzler.droidicon.badges.DroidiconBadge
-                android:id="@+id/btnExchange_sms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                droidicon:db_icon_color="@color/mild_gray"
-                droidicon:db_icon="gmd-sms"
-                droidicon:db_size="80dp"
-                />
 
-            <com.thedazzler.droidicon.badges.DroidiconBadge
-                android:id="@+id/btnExchange_email"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tvExchange_sending"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                droidicon:db_icon_color="@color/mild_gray"
-                droidicon:db_icon="gmd-email"
-                droidicon:db_size="80dp"
-                />
+                android:textSize="40sp"
+                android:text="SENDING"
+                android:textStyle="bold"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvExchange_tapToReceive"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="TAP TO RECEIVE"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:contentDescription="qr-code placement"
+                android:src="@drawable/cardcoffercom"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/tvExchange_chooseMethodSend"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:text="Choose Transfer Method:"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+                <com.thedazzler.droidicon.badges.DroidiconBadge
+                    android:id="@+id/btnExchange_bluetooth_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    droidicon:db_icon_color="@color/mild_gray"
+                    droidicon:db_icon="gmd-bluetooth"
+                    droidicon:db_size="80dp"
+                    />
+                <com.thedazzler.droidicon.badges.DroidiconBadge
+                    android:id="@+id/btnExchange_nfc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    droidicon:db_icon_color="@color/mild_gray"
+                    droidicon:db_icon="gmd-nfc"
+                    droidicon:db_size="80dp"
+                    />
+
+                <com.thedazzler.droidicon.badges.DroidiconBadge
+                    android:id="@+id/btnExchange_sms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    droidicon:db_icon_color="@color/mild_gray"
+                    droidicon:db_icon="gmd-sms"
+                    droidicon:db_size="80dp"
+                    />
+
+                <com.thedazzler.droidicon.badges.DroidiconBadge
+                    android:id="@+id/btnExchange_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    droidicon:db_icon_color="@color/mild_gray"
+                    droidicon:db_icon="gmd-email"
+                    droidicon:db_size="80dp"
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <!-- Receiving Layout -->
+
+        <LinearLayout
+            android:id="@+id/exchange_llReceiving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvExchange_receiving"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                android:text="RECEIVING"
+                android:textStyle="bold"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvExchange_tapToSend"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="TAP TO SEND"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:contentDescription="qr-code placement"
+                android:src="@drawable/cardcoffercom"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/tvExchange_chooseMethodReceive"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:text="Choose Transfer Method:"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+
+            <LinearLayout
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:orientation="horizontal">
+                <com.thedazzler.droidicon.badges.DroidiconBadge
+                    android:id="@+id/btnExchange_bluetooth_receive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    droidicon:db_icon_color="@color/mild_gray"
+                    droidicon:db_icon="gmd-bluetooth"
+                    droidicon:db_size="80dp"
+                    />
+                <com.thedazzler.droidicon.badges.DroidiconBadge
+                    android:id="@id/btnExchange_nfc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    droidicon:db_icon_color="@color/mild_gray"
+                    droidicon:db_icon="gmd-nfc"
+                    droidicon:db_size="80dp"
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+
 
 
 
@@ -88,90 +197,6 @@
 
 
 
+    </ViewFlipper>
 
-
-
-
-
-
-    </LinearLayout>
-
-
-    <!-- Receiving Layout -->
-
-
-    <LinearLayout
-        android:id="@+id/exchange_llReceiving"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/tvExchange_receiving"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="RECEIVING"
-            android:textColor="@color/mild_gray"
-            android:gravity="center"/>
-
-        <TextView
-            android:id="@+id/tvExchange_tapToSend"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="TAP TO SEND"
-            android:textColor="@color/mild_gray"
-            android:gravity="center"/>
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:contentDescription="qr-code placement"
-            android:src="@drawable/cardcoffercom"
-            android:layout_margin="8dp"/>
-
-
-        <LinearLayout
-            android:layout_margin="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:orientation="horizontal">
-            <com.thedazzler.droidicon.badges.DroidiconBadge
-                android:id="@+id/btnExchange_bluetooth_receive"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                droidicon:db_icon_color="@color/mild_gray"
-                droidicon:db_icon="gmd-bluetooth"
-                droidicon:db_size="80dp"
-                />
-            <com.thedazzler.droidicon.badges.DroidiconBadge
-                android:id="@+id/btnExchange_nfc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                droidicon:db_icon_color="@color/mild_gray"
-                droidicon:db_icon="gmd-nfc"
-                droidicon:db_size="80dp"
-                />
-
-
-        </LinearLayout>
-
-
-
-
-
-
-
-
-
-    </LinearLayout>
-
-
-
-
-
-
-</ViewFlipper>
+</ScrollView>

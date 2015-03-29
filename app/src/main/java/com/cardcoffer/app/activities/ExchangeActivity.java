@@ -1,6 +1,7 @@
 package com.cardcoffer.app.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,12 +10,14 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.cardcoffer.app.R;
+import com.thedazzler.droidicon.badges.DroidiconBadge;
 
 public class ExchangeActivity extends Activity {
 
 
     ViewFlipper viewFlipper;
     TextView sendBig,sendTap,receiveBig,receiveTap;
+    DroidiconBadge btnNFC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,15 @@ public class ExchangeActivity extends Activity {
 
         receiveBig = (TextView) findViewById(R.id.tvExchange_receiving);
         receiveTap = (TextView) findViewById(R.id.tvExchange_tapToSend);
+
+        btnNFC = (DroidiconBadge) findViewById(R.id.btnExchange_nfc);
+
+        btnNFC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNFCActivity();
+            }
+        });
 
         sendBig.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +75,13 @@ public class ExchangeActivity extends Activity {
 
             }
         });
+
+    }
+
+    private void launchNFCActivity() {
+
+        Intent intent = new Intent(this, NFCActivity.class);
+        startActivity(intent);
 
     }
 

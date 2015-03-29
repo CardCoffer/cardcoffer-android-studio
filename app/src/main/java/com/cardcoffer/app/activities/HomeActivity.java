@@ -36,7 +36,7 @@ public class HomeActivity extends Activity {
     LinearLayout llCardContainer;
     ImageButton btnCardCoffer;
     DroidiconBadge btnExchange, btnCheckIn;
-    ImageView btnTest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -27,9 +27,9 @@
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.cardcoffer.app.permission.C2D_MESSAGE" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
     <application
@@ -84,8 +84,21 @@
 
         <activity
             android:name=".activities.ExchangeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
+        </activity>
+        <activity
+            android:name=".activities.NFCActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-             >
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/vnd.com.cardcoffer" />
+            </intent-filter>
+
+            >
         </activity>
     </application>
 
