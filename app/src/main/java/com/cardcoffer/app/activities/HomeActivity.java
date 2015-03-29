@@ -198,6 +198,7 @@ public class HomeActivity extends Activity {
         cardThumb.tvName.setText(cardObject.getString("name"));
         cardThumb.tvAffiliation.setText(cardObject.getString("affiliation"));
         cardThumb.tvJobTitle.setText(cardObject.getString("jobTitle"));
+        cardThumb.setTag(id.TAG_CARD_THUMB_OBJECT_ID, cardObject.getObjectId());
 
         llCardContainer.addView(cardThumb);
 

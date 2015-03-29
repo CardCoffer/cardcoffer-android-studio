@@ -65,7 +65,9 @@ public class NFCActivity extends Activity {
         locationSharedPref = getSharedPreferences("locationString", MODE_PRIVATE);
         locationString = locationSharedPref.getString("locationString-name", "Not Set");
 
-        actualPayload = "aBGY6bn8rl";
+        String mainCardObjectID = getSharedPreferences("dataSP", MODE_PRIVATE).getString("mainCard", "");
+        actualPayload = mainCardObjectID;
+
 
         // Check for NFC Adapter
         if (nfcAdapter == null) {

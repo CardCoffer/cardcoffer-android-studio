@@ -66,5 +66,6 @@
     <string name="title_activity_nfc">NFCActivity</string>
     <string name="title_activity_scanner">ScannerActivity</string>
     <item type="id" name="TAG_VIEW_NAME">8585</item>
+    <item type="id" name="TAG_CARD_THUMB_OBJECT_ID">7575</item>
 
 </resources>
