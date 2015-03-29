@@ -2,22 +2,27 @@ package com.cardcoffer.app.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View.OnClickListener;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.cardcoffer.app.R;
 import com.thedazzler.droidicon.badges.DroidiconBadge;
 
+import net.glxn.qrgen.android.QRCode;
+
 public class ExchangeActivity extends Activity {
 
 
     ViewFlipper viewFlipper;
     TextView sendBig,sendTap,receiveBig,receiveTap, openScanner;
+    ImageView ivQRCode;
     DroidiconBadge btnNFCSend, btnNFCReceive;
 
     @Override
@@ -27,6 +32,12 @@ public class ExchangeActivity extends Activity {
         getActionBar().setTitle("Exchange Room");
 
         viewFlipper = (ViewFlipper) findViewById(R.id.exchange_viewFlipper);
+
+
+        ivQRCode = (ImageView) findViewById(R.id.ivExchange_qrcode);
+        //QRCODE GENERATION! :P
+        Bitmap myBitmap = QRCode.from("http://cardcoffer.com").bitmap();
+        ivQRCode.setImageBitmap(myBitmap);
 
         sendBig = (TextView) findViewById(R.id.tvExchange_sending);
         sendTap = (TextView) findViewById(R.id.tvExchange_tapToReceive);
@@ -110,6 +121,7 @@ public class ExchangeActivity extends Activity {
 
         intent.putExtra("mode", mode);
         startActivity(intent);
+
 
     }
 
