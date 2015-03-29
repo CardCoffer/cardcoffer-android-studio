@@ -17,6 +17,7 @@
         android:background="@color/sidebar_gray">
 
 
+
         <!-- Sending Layout -->
 
 
@@ -29,17 +30,61 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/tvNFC_sending"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/nfc_mode_phones"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvNFC_sending_then"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/nfc_send_mode_phones_then"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+            <com.thedazzler.droidicon.badges.DroidiconBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                droidicon:db_icon_color="@color/mild_gray"
+                droidicon:db_icon="gmd-nfc"
+                droidicon:db_size="200dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+        <!-- Receiving Layout -->
+
+
+        <LinearLayout
+            android:id="@+id/nfc_llReceiving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
                 android:id="@+id/tvNFC_receiving"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                android:text="@string/nfc_receive_mode_phones"
+                android:text="@string/nfc_mode_phones"
                 android:textColor="@color/mild_gray"
                 android:gravity="center"/>
 
             <TextView
-                android:id="@+id/tvExchange_tapToSend"
+                android:id="@+id/tvNFC_receiving_then"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"

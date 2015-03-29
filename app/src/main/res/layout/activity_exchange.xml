@@ -75,7 +75,7 @@
                     droidicon:db_size="80dp"
                     />
                 <com.thedazzler.droidicon.badges.DroidiconBadge
-                    android:id="@+id/btnExchange_nfc"
+                    android:id="@+id/btnExchange_nfc_send"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
@@ -173,7 +173,7 @@
                     droidicon:db_size="80dp"
                     />
                 <com.thedazzler.droidicon.badges.DroidiconBadge
-                    android:id="@id/btnExchange_nfc"
+                    android:id="@+id/btnExchange_nfc_receive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"

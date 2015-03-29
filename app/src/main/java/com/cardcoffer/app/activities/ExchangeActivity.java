@@ -17,7 +17,7 @@ public class ExchangeActivity extends Activity {
 
     ViewFlipper viewFlipper;
     TextView sendBig,sendTap,receiveBig,receiveTap;
-    DroidiconBadge btnNFC;
+    DroidiconBadge btnNFCSend, btnNFCReceive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +33,21 @@ public class ExchangeActivity extends Activity {
         receiveBig = (TextView) findViewById(R.id.tvExchange_receiving);
         receiveTap = (TextView) findViewById(R.id.tvExchange_tapToSend);
 
-        btnNFC = (DroidiconBadge) findViewById(R.id.btnExchange_nfc);
+        btnNFCSend = (DroidiconBadge) findViewById(R.id.btnExchange_nfc_send);
 
-        btnNFC.setOnClickListener(new View.OnClickListener() {
+        btnNFCSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                launchNFCActivity();
+                launchNFCActivity("send");
+            }
+        });
+
+        btnNFCReceive = (DroidiconBadge) findViewById(R.id.btnExchange_nfc_receive);
+
+        btnNFCReceive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNFCActivity("receive");
             }
         });
 
@@ -78,9 +87,11 @@ public class ExchangeActivity extends Activity {
 
     }
 
-    private void launchNFCActivity() {
+    private void launchNFCActivity(String mode) {
 
         Intent intent = new Intent(this, NFCActivity.class);
+
+        intent.putExtra("mode", mode);
         startActivity(intent);
 
     }

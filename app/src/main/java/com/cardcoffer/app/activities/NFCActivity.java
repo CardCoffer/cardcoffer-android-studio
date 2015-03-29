@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -18,9 +19,22 @@ public class NFCActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nfc);
 
+        String mode = getIntent().getStringExtra("mode").toString();
 
+        Log.d("ui", "mode: " + mode);
+
+        if (mode.equalsIgnoreCase("send")) {
+            setContentView(R.layout.activity_nfc_send);
+            Log.d("ui", "setting layout send");
+        }
+
+        else if(mode.equalsIgnoreCase("receive")){
+
+            setContentView(R.layout.activity_nfc_receive);
+
+            Log.d("ui", "setting layout receive");
+        }
 
 
 
