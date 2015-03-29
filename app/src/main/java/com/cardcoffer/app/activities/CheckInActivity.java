@@ -46,7 +46,7 @@ public class CheckInActivity extends Activity {
 
 		etLocation = (EditText) findViewById(R.id.etCheckIn_location);
 		
-		String currentLocationString =locationSharedPref.getString("location-name", ""); 
+		String currentLocationString =locationSharedPref.getString("location-name", "Not Set");
 		if(!(currentLocationString.equals(""))){
 			etLocation.setText(currentLocationString);
 		}
