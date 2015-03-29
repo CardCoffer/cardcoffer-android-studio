@@ -22,18 +22,20 @@ public class NFCActivity extends Activity {
 
         String mode = getIntent().getStringExtra("mode").toString();
 
-        Log.d("ui", "mode: " + mode);
+//        Log.d("ui", "mode: " + mode);
 
         if (mode.equalsIgnoreCase("send")) {
             setContentView(R.layout.activity_nfc_send);
-            Log.d("ui", "setting layout send");
+            getActionBar().setTitle("Send via NFC");
+//            Log.d("ui", "setting layout send");
         }
 
         else if(mode.equalsIgnoreCase("receive")){
 
             setContentView(R.layout.activity_nfc_receive);
+            getActionBar().setTitle("Receive via NFC");
 
-            Log.d("ui", "setting layout receive");
+//            Log.d("ui", "setting layout receive");
         }
 
 
