@@ -45,6 +45,7 @@ public class HomeActivity extends Activity {
     LinearLayout llCardContainer;
     ImageButton btnCardCoffer;
     DroidiconBadge btnExchange, btnCheckIn;
+    private ThumbnailButton btnAddCard;
 
 
     @Override
@@ -100,18 +101,23 @@ public class HomeActivity extends Activity {
 
         }
 
-    }
-
-    private void launchExchangeActivity() {
-
-        Intent intent  = new Intent(this, ExchangeActivity.class);
-        startActivity(intent);
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
+//        boolean found = false;
+//
+//        for(int i = 0; i<llCardContainer.getChildCount(); i++){
+//
+//            if(llCardContainer.getChildAt(i).getTag(id.TAG_VIEW_NAME).equals("ThumbnailButton")){
+//                found = true;
+//                break;
+//            }
+//
+//        }
+//
+//        if(found != true){
+//            llCardContainer.addView(new ThumbnailButton(this));
+//        }
+//
+        btnAddCard = new ThumbnailButton(this);
+        llCardContainer.addView(btnAddCard);
 
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
@@ -142,20 +148,20 @@ public class HomeActivity extends Activity {
         });
 
 
-        boolean found = false;
 
-        for(int i = 0; i<llCardContainer.getChildCount(); i++){
 
-            if(llCardContainer.getChildAt(i).getTag(id.TAG_VIEW_NAME).equals("ThumbnailButton")){
-                found = true;
-                break;
-            }
+    }
 
-        }
+    private void launchExchangeActivity() {
 
-        if(found != true){
-            llCardContainer.addView(new ThumbnailButton(this));
-        }
+        Intent intent  = new Intent(this, ExchangeActivity.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
     }
 

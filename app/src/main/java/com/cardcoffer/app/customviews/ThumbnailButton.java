@@ -15,7 +15,7 @@ public class ThumbnailButton extends Button {
     public ThumbnailButton(Context context) {
         super(context);
 
-        setBackgroundResource(R.drawable.frame_card_thumb);
+        setBackgroundResource(R.drawable.curved_bg_thumb);
         setText("Add New Card!");
         setTag(R.id.TAG_VIEW_NAME, "ThumbnailButton");
 
