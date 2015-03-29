@@ -3,6 +3,7 @@ package com.cardcoffer.app.activities;
 import com.cardcoffer.app.R;
 import com.cardcoffer.app.customviews.ItemCardThumbnail;
 
+
 import android.animation.LayoutTransition;
 import android.app.Activity;
 import android.os.Bundle;

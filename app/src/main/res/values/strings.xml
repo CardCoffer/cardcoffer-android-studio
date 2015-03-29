@@ -65,5 +65,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_nfc">NFCActivity</string>
     <string name="title_activity_scanner">ScannerActivity</string>
+    <item type="id" name="TAG_VIEW_NAME">8585</item>
 
 </resources>

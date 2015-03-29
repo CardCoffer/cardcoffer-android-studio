@@ -10,21 +10,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.cardcoffer.app.R;
 import com.cardcoffer.app.R.id;
-import com.cardcoffer.app.customviews.ItemCardThumbnail;
-import com.parse.ParseUser;
-import com.thedazzler.droidicon.IconicFontDrawable;
-import com.thedazzler.droidicon.badges.DroidiconBadge;
-import com.thedazzler.droidicon.typeface.CustomTypefaceHolder;
-import com.thedazzler.droidicon.typeface.TypefaceManager;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.cardcoffer.app.customviews.ItemCardThumbnail;
+import com.cardcoffer.app.customviews.ThumbnailButton;
+import com.parse.FindCallback;
+import com.parse.GetCallback;
+import com.parse.ParseACL;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.thedazzler.droidicon.badges.DroidiconBadge;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -100,6 +109,96 @@ public class HomeActivity extends Activity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername() );
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> userDataList, ParseException e) {
+                if (e == null) {
+
+                    if(userDataList != null){
+                        ParseObject userData = userDataList.get(0);
+//                        Toast.makeText(getApplicationContext(), userData.toString(), Toast.LENGTH_SHORT).show();
+
+                        JSONArray arrayOfOwnCards = userData.getJSONArray("myOwnCards");
+
+                        try {
+                            layCards(arrayOfOwnCards);
+                        } catch (JSONException e1) {
+                            e1.printStackTrace();
+                        }
+
+//                        Toast.makeText(getApplicationContext(), myArray.toString(), Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+                    Toast.makeText(getApplicationContext(),"Error Retrieving Data From Server", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+        boolean found = false;
+
+        for(int i = 0; i<llCardContainer.getChildCount(); i++){
+
+            if(llCardContainer.getChildAt(i).getTag(id.TAG_VIEW_NAME).equals("ThumbnailButton")){
+                found = true;
+                break;
+            }
+
+        }
+
+        if(found != true){
+            llCardContainer.addView(new ThumbnailButton(this));
+        }
+
+    }
+
+    private void layCards(JSONArray arrayOfOwnCards) throws JSONException {
+
+        for(int i = 0; i<arrayOfOwnCards.length(); i++){
+
+            String id = arrayOfOwnCards.getString(i);
+
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Cards");
+
+            query.getInBackground(id, new GetCallback<ParseObject>() {
+                public void done(ParseObject object, ParseException e) {
+                    if (e == null) {
+                        populateActivity(object);
+                    } else {
+
+
+
+                    }
+                }
+            });
+
+        }
+
+
+
+    }
+
+    private void populateActivity(ParseObject cardObject) {
+
+        ItemCardThumbnail cardThumb = new ItemCardThumbnail(this);
+
+        cardThumb.tvName.setText(cardObject.getString("name"));
+        cardThumb.tvAffiliation.setText(cardObject.getString("affiliation"));
+        cardThumb.tvJobTitle.setText(cardObject.getString("jobTitle"));
+
+        llCardContainer.addView(cardThumb);
+
+
+
+    }
+
     private void initCustomIcons() {
 
 
@@ -168,8 +267,6 @@ public class HomeActivity extends Activity {
             return true;
         }
         if (id == R.id.action_search) {
-
-            llCardContainer.addView(new ItemCardThumbnail(this));
 
             return true;
         }
