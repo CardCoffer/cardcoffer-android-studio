@@ -37,13 +37,17 @@ public class ExchangeActivity extends Activity {
 
         ivQRCode = (ImageView) findViewById(R.id.ivExchange_qrcode);
         //QRCODE GENERATION! :P
-        String mainCardObjectID = getSharedPreferences("dataSP", MODE_PRIVATE).getString("mainCard", "");
-        if(mainCardObjectID.equals("")){
+        //TODO this has to be fixed.. the main card should be stored on web rather than mobile device...
+        try {
+            String mainCardObjectID = getSharedPreferences("dataSP", MODE_PRIVATE).getString("mainCard", "");
+            Bitmap myBitmap = QRCode.from(mainCardObjectID).bitmap();
+            ivQRCode.setImageBitmap(myBitmap);
+        }
+        catch(Exception e){
             Toast.makeText(getApplicationContext(), "Please Long-click on a thumbnail in Home to set as your desired card.", Toast.LENGTH_LONG).show();
             finish();
         }
-        Bitmap myBitmap = QRCode.from(mainCardObjectID).bitmap();
-        ivQRCode.setImageBitmap(myBitmap);
+
 
         sendBig = (TextView) findViewById(R.id.tvExchange_sending);
         sendTap = (TextView) findViewById(R.id.tvExchange_tapToReceive);
