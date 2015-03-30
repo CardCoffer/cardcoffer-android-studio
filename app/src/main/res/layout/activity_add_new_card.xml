@@ -1,0 +1,161 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:droidicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addnewcard_scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sidebar_gray"
+    android:layout_weight="1"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    tools:ignore="Suspicious0dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/addnewcard_etName"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Name"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etJobTitle"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Job Title"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etAffiliation"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Affiliation"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etAddress"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Address"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etPhone"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Phone Number"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etEmail"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Email"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etFacebook"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="facebook.com/"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etTwitter"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Twitter @"
+            />
+        <EditText
+            android:id="@+id/addnewcard_etLinkedin"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Linkedin"
+            />
+
+
+        <EditText
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:id="@+id/addnewcard_etGoogleplus"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="plus.google.com/"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            />
+        <EditText
+            android:id="@+id/addnewcard_miniResume"
+            android:layout_width="250dp"
+            android:padding="10dp"
+            android:layout_height="40dp"
+            android:textColor="@color/mild_gray"
+            android:hint="Short Bio"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="Attach CV"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:background="@drawable/ali_button"
+            />
+
+        <Button
+            android:id="@+id/btnAddNewCard_saveChanges"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:text="Save &amp; Add Card"
+            android:textStyle="bold"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:background="@drawable/ali_button"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

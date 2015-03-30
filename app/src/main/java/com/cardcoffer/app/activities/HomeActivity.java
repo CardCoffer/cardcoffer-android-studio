@@ -118,6 +118,15 @@ public class HomeActivity extends Activity {
 //        }
 //
             btnAddCard = new ThumbnailButton(this);
+            btnAddCard.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                    launchNewCardActivity();
+
+                }
+            });
             llCardContainer.addView(btnAddCard);
 
 
@@ -150,6 +159,14 @@ public class HomeActivity extends Activity {
 
         }
 
+
+    }
+
+    private void launchNewCardActivity() {
+
+
+        Intent intent = new Intent(this, AddNewCardActivity.class);
+        startActivity(intent);
 
     }
 

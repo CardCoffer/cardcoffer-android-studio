@@ -87,7 +87,7 @@
         <activity
             android:name=".activities.ExchangeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:parentActivityName=".activities.HomeActivity">
+            android:parentActivityName=".activities.HomeActivity" >
         </activity>
         <activity
             android:name=".activities.NFCActivity"
@@ -109,6 +109,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cardcoffer.app.activities.ExchangeActivity" />
+        </activity>
+        <activity
+            android:name=".activities.AddNewCardActivity"
+            android:label="@string/title_activity_add_new_card"
+            android:parentActivityName=".activities.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.HomeActivity" />
         </activity>
     </application>
 
