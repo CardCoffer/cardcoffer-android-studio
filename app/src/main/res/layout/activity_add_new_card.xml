@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools" xmlns:droidicon="http://schemas.android.com/apk/res-auto"
     android:id="@+id/addnewcard_viewFlipper" android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:animateLayoutChanges="true"
     android:background="@color/sidebar_gray">
 
 <ScrollView
@@ -36,7 +36,7 @@
                 android:layout_margin="5dp"
                 android:layout_height="40dp"
                 android:textColor="@color/mild_gray"
-                android:hint="Name"
+                android:hint="Name (Required)"
                 />
             <EditText
                 android:id="@+id/addnewcard_etJobTitle"
@@ -46,7 +46,7 @@
                 android:padding="10dp"
                 android:layout_height="40dp"
                 android:textColor="@color/mild_gray"
-                android:hint="Job Title"
+                android:hint="Job Title (Required)"
                 />
             <EditText
                 android:id="@+id/addnewcard_etAffiliation"
@@ -56,7 +56,7 @@
                 android:padding="10dp"
                 android:layout_height="40dp"
                 android:textColor="@color/mild_gray"
-                android:hint="Affiliation"
+                android:hint="Affiliation (Required)"
                 />
             <EditText
                 android:id="@+id/addnewcard_etAddress"
@@ -132,7 +132,7 @@
                 android:gravity="center"
                 />
             <EditText
-                android:id="@+id/addnewcard_miniResume"
+                android:id="@+id/addnewcard_etMiniResume"
                 android:layout_width="250dp"
                 android:padding="10dp"
                 android:layout_height="40dp"
@@ -168,6 +168,7 @@
 
 </ScrollView>
         <LinearLayout
+            android:animateLayoutChanges="true"
             android:id="@+id/addnewcard_llProgress"
             android:layout_width="match_parent"
             android:gravity="center"
