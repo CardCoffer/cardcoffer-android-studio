@@ -69,7 +69,7 @@ public class AddNewCardActivity extends Activity {
     }
 
     private void saveCardToCloud() {
-
+        //resume work from here :D
 
 
 
