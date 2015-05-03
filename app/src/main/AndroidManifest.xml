@@ -118,6 +118,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HomeActivity" />
         </activity>
+        <activity
+            android:name=".activities.AddNewStackActivity"
+            android:label="@string/title_activity_new_stack"
+            android:parentActivityName=".activities.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cardcoffer.app.activities.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

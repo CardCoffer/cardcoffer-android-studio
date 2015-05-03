@@ -6,6 +6,7 @@ import com.cardcoffer.app.customviews.ItemCardThumbnail;
 
 import android.animation.LayoutTransition;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -58,6 +59,14 @@ public class StacksActivity extends Activity {
 
 			return true;
 		}
+
+        if(id == R.id.action_add_new_stack){
+
+            Intent intent = new Intent(this, AddNewStackActivity.class);
+            startActivity(intent);
+
+            return true;
+        }
 		return super.onOptionsItemSelected(item);
 	}
 

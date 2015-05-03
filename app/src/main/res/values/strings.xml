@@ -68,5 +68,6 @@
     <item type="id" name="TAG_VIEW_NAME">8585</item>
     <item type="id" name="TAG_CARD_THUMB_OBJECT_ID">7575</item>
     <string name="title_activity_add_new_card">Add New Card</string>
+    <string name="title_activity_new_stack">New Stack</string>
 
 </resources>

@@ -33,6 +33,10 @@ dependencies {
     compile("net.glxn.qrgen:android:2.0")
 }
 
+dependencies {
+    compile 'com.larswerkman:HoloColorPicker:1.5'
+}
+
 repositories {
     mavenCentral()
 }
