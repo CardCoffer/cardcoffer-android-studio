@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.cardcoffer.app.R;
@@ -19,7 +20,7 @@ public class BluetoothActivity extends Activity {
 
 
     //request codes
-    int REQUEST_ENABLE_BT = 1001;
+    int REQUEST_ENABLE_BT_DISCOVERY = 1001;
 
     BluetoothAdapter bluetoothAdapter;
     @Override
@@ -50,7 +51,7 @@ public class BluetoothActivity extends Activity {
 
             Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
             discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 0);
-            startActivity(discoverableIntent);
+            startActivityForResult(discoverableIntent, REQUEST_ENABLE_BT_DISCOVERY);
         }
     }
 
@@ -75,5 +76,21 @@ public class BluetoothActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_ENABLE_BT_DISCOVERY){
+
+            if(resultCode == RESULT_OK){
+
+                Toast.makeText(getApplicationContext(), "OK!", Toast.LENGTH_SHORT).show();
+            }
+            else if(resultCode == RESULT_CANCELED){
+                Toast.makeText(getApplicationContext(), "Oh No!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
     }
 }
