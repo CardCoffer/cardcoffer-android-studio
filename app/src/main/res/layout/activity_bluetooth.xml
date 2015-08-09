@@ -16,6 +16,30 @@
         android:id="@+id/bluetooth_viewFlipper"
         android:background="@color/sidebar_gray">
 
+        <!-- "Not Supported" Layout -->
+
+        <LinearLayout
+            android:id="@+id/bluetooth_llNoSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvBluetooth_noSupport"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/bluetooth_no_support"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+
+        </LinearLayout>
+
+
         <!-- Intro Layout -->
 
         <LinearLayout
@@ -56,43 +80,6 @@
 
 
         </LinearLayout>
-
-
-        <!-- "Not Supported" Layout -->
-
-        <!-- Intro Layout -->
-
-        <LinearLayout
-            android:id="@+id/bluetooth_llNoSupport"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/tvBluetooth_noSupport"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:text="@string/bluetooth_no_support"
-                android:textColor="@color/mild_gray"
-                android:gravity="center"/>
-
-            <com.thedazzler.droidicon.badges.DroidiconBadge
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                droidicon:db_icon_color="@color/mild_gray"
-                droidicon:db_icon="gmd-bluetooth"
-                droidicon:db_size="200dp"
-                />
-
-
-
-        </LinearLayout>
-
-
 
 
 
