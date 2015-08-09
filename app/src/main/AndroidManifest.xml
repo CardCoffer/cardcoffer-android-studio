@@ -20,7 +20,6 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
 
-
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="false" />
@@ -127,6 +126,14 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cardcoffer.app.activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activities.BluetoothActivity"
+            android:label="@string/title_activity_bluetooth"
+            android:parentActivityName=".activities.ExchangeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cardcoffer.app.activities.ExchangeActivity" />
         </activity>
     </application>
 

@@ -69,5 +69,9 @@
     <item type="id" name="TAG_CARD_THUMB_OBJECT_ID">7575</item>
     <string name="title_activity_add_new_card">Add New Card</string>
     <string name="title_activity_new_stack">New Stack</string>
+    <string name="title_activity_bluetooth">Exchange via Bluetooth</string>
+    <string name="bluetooth_intro">Exchange Your Business Card via Bluetooth!</string>
+    <string name="bluetooth_no_support">Unfortunately, Your Phone Doesn\'t Support Bluetooth Communication.</string>
+    <string name="tap_on_bluetooth_icon">Tap On The Bluetooth Icon To Start Exchange!</string>
 
 </resources>

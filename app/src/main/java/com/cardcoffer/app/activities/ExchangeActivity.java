@@ -24,7 +24,7 @@ public class ExchangeActivity extends Activity {
     ViewFlipper viewFlipper;
     TextView sendBig,sendTap,receiveBig,receiveTap, openScanner;
     ImageView ivQRCode;
-    DroidiconBadge btnNFCSend, btnNFCReceive;
+    DroidiconBadge btnNFCSend, btnNFCReceive, btnBluetoothSend, btnBluetoothReceive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +57,25 @@ public class ExchangeActivity extends Activity {
         openScanner = (TextView) findViewById(R.id.tvExchange_openQRScanner);
 
         btnNFCSend = (DroidiconBadge) findViewById(R.id.btnExchange_nfc_send);
+
+        btnBluetoothSend = (DroidiconBadge) findViewById(R.id.btnExchange_bluetooth_send);
+
+        btnBluetoothSend.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchBluetoothActivity("send");
+            }
+        });
+
+        btnBluetoothReceive = (DroidiconBadge) findViewById(R.id.btnExchange_bluetooth_receive);
+
+        btnBluetoothReceive.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchBluetoothActivity("receive");
+            }
+        });
+
 
         btnNFCSend.setOnClickListener(new OnClickListener() {
             @Override
@@ -132,6 +151,15 @@ public class ExchangeActivity extends Activity {
         intent.putExtra("mode", mode);
         startActivity(intent);
 
+
+    }
+
+    private void launchBluetoothActivity(String mode) {
+
+        Intent intent = new Intent(this, BluetoothActivity.class);
+
+        intent.putExtra("mode", mode);
+        startActivity(intent);
 
     }
 

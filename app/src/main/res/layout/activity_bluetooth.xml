@@ -1,0 +1,211 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:droidicon="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    tools:ignore="Suspicious0dp" >
+
+
+    <ViewFlipper android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bluetooth_viewFlipper"
+        android:background="@color/sidebar_gray">
+
+        <!-- Intro Layout -->
+
+        <LinearLayout
+            android:id="@+id/bluetooth_llIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvBluetooth_intro"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/bluetooth_intro"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+            <com.thedazzler.droidicon.badges.DroidiconBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                droidicon:db_icon_color="@color/mild_gray"
+                droidicon:db_icon="gmd-bluetooth"
+                droidicon:db_size="200dp"
+                />
+            <TextView
+                android:id="@+id/tvBluetooth_tap"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/tap_on_bluetooth_icon"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+
+
+        </LinearLayout>
+
+
+        <!-- "Not Supported" Layout -->
+
+        <!-- Intro Layout -->
+
+        <LinearLayout
+            android:id="@+id/bluetooth_llNoSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvBluetooth_noSupport"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/bluetooth_no_support"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+            <com.thedazzler.droidicon.badges.DroidiconBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                droidicon:db_icon_color="@color/mild_gray"
+                droidicon:db_icon="gmd-bluetooth"
+                droidicon:db_size="200dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+        <!-- Sending Layout -->
+
+<!--
+        <LinearLayout
+            android:id="@+id/nfc_llSending"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvNFC_sending"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/nfc_mode_phones"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvNFC_sending_then"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/nfc_send_mode_phones_then"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+            <com.thedazzler.droidicon.badges.DroidiconBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                droidicon:db_icon_color="@color/mild_gray"
+                droidicon:db_icon="gmd-nfc"
+                droidicon:db_size="200dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+-->
+
+        <!-- Receiving Layout -->
+
+<!--
+        <LinearLayout
+            android:id="@+id/nfc_llReceiving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvNFC_receiving"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="@string/nfc_mode_phones"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvNFC_receiving_then"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/nfc_receive_mode_phones_then"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+            <com.thedazzler.droidicon.badges.DroidiconBadge
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                droidicon:db_icon_color="@color/mild_gray"
+                droidicon:db_icon="gmd-nfc"
+                droidicon:db_size="200dp"
+                />
+            <TextView
+                android:id="@+id/tvNFC_receiving_card"
+                android:layout_width="200dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:text="@string/nfc_receive_mode_card"
+                android:textColor="@color/mild_gray"
+                android:gravity="center"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+-->
+
+
+
+
+    </ViewFlipper>
+
+</ScrollView>
